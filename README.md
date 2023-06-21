@@ -39,10 +39,11 @@ There's no limit to the number of domains or Node Balancers this process can mai
 
 The certificate and private key paths will be (replace mysite with your domain):
 
-> `/etc/letsencrypt/live/mysite.com/fullchain.pem` > `/etc/letsencrypt/live/mysite.com/privkey.pem`
+> `/etc/letsencrypt/live/mysite.com/fullchain.pem`
+> `/etc/letsencrypt/live/mysite.com/privkey.pem`
 
 9. Run the update_nodebalancer_job.sh file with the following arguments. You'll need to use the Linode CLI or API to retrieve the Node Balancer and Config Id's. NAME is used to name the systemd job that's scheduled which can be anything. Ie: "mysitecom"
 
-   sudo bash create_systemd_job.sh <NODE_BALANCER_ID> <CONFIG_ID> <PRIVATE_KEY_PATH> <CERTIFICATE_PATH> <API_TOKEN> <NAME>
+> sudo bash create_systemd_job.sh <NODE_BALANCER_ID> <CONFIG_ID> <PRIVATE_KEY_PATH> <CERTIFICATE_PATH> <API_TOKEN> <NAME>
 
 10. Your node balancer will now have the cert and will auto renew. For each additional Node Balancer, repeat steps 7-10.
